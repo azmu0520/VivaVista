@@ -8,13 +8,15 @@ export const Wrap = styled.div`
 
 export const Nav = styled.div`
   display: flex;
+  align-items: ${({ menu }) => (menu ? 'center' : 'flex-star')};
   flex-direction: column;
-  flex: 1;
+  flex: ${({ menu }) => (menu ? '0' : '1')};
   width: 100%;
   height: 100%;
   padding: 40px 32px;
   background: #ffffff;
   box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
 
   @media (max-width: 1400px) {
   }
@@ -31,6 +33,7 @@ Nav.Logo_Wrap = styled.div`
   width: 100%;
   height: fit-content;
   margin-bottom: 45px;
+  cursor: pointer;
   @media (max-width: 765px) {
     justify-content: center;
   }
@@ -41,9 +44,11 @@ Nav.Logo_Text = styled.span`
   font-size: 20px;
   font-weight: 600;
   color: var(--color-primary);
+  display: ${({ menu }) => (menu ? 'none' : 'block')};
   @media (max-width: 765px) {
     display: none;
   }
+  transition: all 0.3s ease-in-out;
 `;
 
 Nav.Logo = styled(Logo)`
@@ -84,6 +89,9 @@ Nav.Link_Text = styled.h3`
   color: ${({ active }) =>
     active == 'true' ? 'var(--color-primary)' : '#334D6E'};
   transition: all 0.3s ease-in-out;
+  display: ${({ menu }) => (menu ? 'none' : 'block')};
+  transition: all 0.3s ease-in-out;
+
   @media (max-width: 765px) {
     display: none;
   }
