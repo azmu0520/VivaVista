@@ -1,21 +1,21 @@
 @font-face {
   font-family: 'Inter-Medium';
-  src: url(/src/assets/fonts/Inter-Medium.otf) format('otf');
+  src: url(/src/assets/fonts/Inter-Medium.otf);
 }
 
 @font-face {
   font-family: 'Inter-Regular';
-  src: url(/src/assets/fonts/Inter-Regular.otf) format('otf');
+  src: url(/src/assets/fonts/Inter-Regular.otf);
 }
 
 @font-face {
   font-family: 'Inter-SemiBold';
-  src: url(/src/assets/fonts/Inter-SemiBold.otf) format('otf');
+  src: url(/src/assets/fonts/Inter-SemiBold.otf);
 }
 
 :root {
   /*--------------------- COLOR ----------------- */
-  --color-primary: #59a7ff;
+  --color-primary: #29a0dc;
   --color-yellow: #ffbd3d;
   --color-red: #ff1717;
   --color-green: #41d032;
@@ -42,8 +42,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-regular);
+  font-family: 'Inter-Regular';
   font-style: normal;
+  list-style: none;
+  text-decoration: none;
 }
 
 h1,
