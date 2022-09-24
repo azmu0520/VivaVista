@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { ReactComponent as Search } from '../../assets/icons/search.svg';
@@ -15,18 +14,17 @@ export const Wrap = styled.div`
 
 export const Nav = styled.div`
   display: flex;
-  align-items: ${({ menu }) => (menu ? 'center' : 'flex-star')};
+  /* align-items: ${({ menu }) => (menu ? 'center' : 'flex-star')}; */
   flex-direction: column;
   flex: ${({ menu }) => (menu ? '0' : '1')};
-  width: 100%;
+  max-width: 280px;
   height: 100%;
-  padding: 40px 32px;
+  padding: ${({ menu }) => (menu ? '40px 16px' : '40px 32px')};
   background: #ffffff;
   box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease-in-out;
 
-  @media (max-width: 1400px) {
-  }
+ 
   @media (max-width: 765px) {
     padding: 25px 16px;
   }
@@ -51,7 +49,13 @@ Nav.Logo_Text = styled.span`
   font-size: 20px;
   font-weight: 600;
   color: var(--color-primary);
-  display: ${({ menu }) => (menu ? 'none' : 'block')};
+  opacity: ${({ menu }) => (menu ? '0' : '1')};
+  position: ${({ menu }) => (menu ? 'absolute' : 'static')};
+  right: ${({ menu }) => (menu ? '0' : '1')};
+  ::before{
+    content: 'WebBrain Academy';
+    
+  }
   @media (max-width: 765px) {
     display: none;
   }
@@ -59,7 +63,8 @@ Nav.Logo_Text = styled.span`
 `;
 
 Nav.Logo = styled(Logo)`
-  width: 40px;
+  min-width: 40px;
+  max-width: 60px;
   /* width: 133px;
   height: fit-content;
   margin-bottom: 45px;
@@ -68,6 +73,8 @@ Nav.Logo = styled(Logo)`
 
 Nav.Links = styled.ul`
   display: flex;
+  /* align-items: ${({menu})=> menu ? 'center' : 'flex-start'}; */
+
   flex-direction: column;
   border-bottom: 1px solid #ebeff2;
 `;
@@ -79,6 +86,7 @@ Nav.Link = styled.li`
     margin-left: 16px;
   }
   .nav__icon {
+    
     path {
       fill: ${({ active }) =>
         active == 'true' ? 'var(--color-primary)' : '#334D6E'};
@@ -95,8 +103,8 @@ Nav.Link_Text = styled.h3`
   margin-left: 16px;
   color: ${({ active }) =>
     active == 'true' ? 'var(--color-primary)' : '#334D6E'};
-  transition: all 0.3s ease-in-out;
-  display: ${({ menu }) => (menu ? 'none' : 'block')};
+  opacity: ${({menu})=> menu ? '0' : '1'};
+  width: ${({menu})=> menu ? '0' : 'fit-content'};
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 765px) {

@@ -12,9 +12,9 @@ const Navbar = () => {
       <Nav menu={menu}>
         <Nav.Logo_Wrap onClick={() => setMenu(!menu)}>
           <Nav.Logo />
-          <Nav.Logo_Text menu={menu}>Webbrain Academy</Nav.Logo_Text>
+          <Nav.Logo_Text menu={menu} /> 
         </Nav.Logo_Wrap>
-        <Nav.Links>
+        <Nav.Links menu={menu}>
           {data.map(({ id, title, path, Icon }) => (
             <NavLink key={id} to={path}>
               <Nav.Link active={(location.pathname == path).toString()}>
