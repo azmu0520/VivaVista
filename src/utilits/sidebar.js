@@ -8,6 +8,7 @@ import { ReactComponent as calendar } from '../assets/icons/calendar.svg';
 import { ReactComponent as balance } from '../assets/icons/balance.svg';
 import { ReactComponent as sections } from '../assets/icons/sections.svg';
 import { ReactComponent as settings } from '../assets/icons/settings.svg';
+import Students from '../components/Students';
 
 export const data = [
   {
@@ -22,7 +23,7 @@ export const data = [
     title: "O'quvchilar",
     path: '/students',
     Icon: students,
-    Component: Generic,
+    Component: Students,
   },
   {
     id: 3,
