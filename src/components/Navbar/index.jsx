@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Wrap, Nav, Rest } from './style';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { data } from '../../utilits/sidebar';
-import user from '../../assets/images/user.png'
+import user from '../../assets/images/user.png';
 
 const Navbar = () => {
   const location = useLocation();
@@ -12,7 +12,7 @@ const Navbar = () => {
       <Nav menu={menu}>
         <Nav.Logo_Wrap onClick={() => setMenu(!menu)}>
           <Nav.Logo />
-          <Nav.Logo_Text menu={menu} /> 
+          <Nav.Logo_Text menu={menu} />
         </Nav.Logo_Wrap>
         <Nav.Links menu={menu}>
           {data.map(({ id, title, path, Icon }) => (

@@ -25,8 +25,6 @@ Wrap.Header = styled.div`
 
 Wrap.Title = styled.h1``;
 
-Wrap.Header__Cta = styled.div``;
-
 Wrap.Cta__Plus = styled(Plus)`
   margin-right: 6px;
 `;
