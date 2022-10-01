@@ -9,6 +9,7 @@ import { ReactComponent as balance } from '../assets/icons/balance.svg';
 import { ReactComponent as sections } from '../assets/icons/sections.svg';
 import { ReactComponent as settings } from '../assets/icons/settings.svg';
 import Students from '../components/Students';
+import Sections from '../components/Sections';
 
 export const data = [
   {
@@ -65,7 +66,7 @@ export const data = [
     title: 'Bo‘limlar',
     path: '/sections',
     Icon: sections,
-    Component: Generic,
+    Component: Sections,
   },
   {
     id: 9,

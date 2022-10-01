@@ -3,9 +3,6 @@ import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { ReactComponent as Search } from '../../assets/icons/search.svg';
 import { ReactComponent as Notification } from '../../assets/icons/notification.svg';
 
-
-
-
 export const Wrap = styled.div`
   display: flex;
   width: 100%;
@@ -24,7 +21,6 @@ export const Nav = styled.div`
   box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease-in-out;
 
- 
   @media (max-width: 765px) {
     padding: 25px 16px;
   }
@@ -52,9 +48,8 @@ Nav.Logo_Text = styled.span`
   opacity: ${({ menu }) => (menu ? '0' : '1')};
   position: ${({ menu }) => (menu ? 'absolute' : 'static')};
   right: ${({ menu }) => (menu ? '0' : '1')};
-  ::before{
+  ::before {
     content: 'WebBrain Academy';
-    
   }
   @media (max-width: 765px) {
     display: none;
@@ -73,7 +68,7 @@ Nav.Logo = styled(Logo)`
 
 Nav.Links = styled.ul`
   display: flex;
-  /* align-items: ${({menu})=> menu ? 'center' : 'flex-start'}; */
+  /* align-items: ${({ menu }) => (menu ? 'center' : 'flex-start')}; */
 
   flex-direction: column;
   border-bottom: 1px solid #ebeff2;
@@ -86,7 +81,6 @@ Nav.Link = styled.li`
     margin-left: 16px;
   }
   .nav__icon {
-    
     path {
       fill: ${({ active }) =>
         active == 'true' ? 'var(--color-primary)' : '#334D6E'};
@@ -103,8 +97,8 @@ Nav.Link_Text = styled.h3`
   margin-left: 16px;
   color: ${({ active }) =>
     active == 'true' ? 'var(--color-primary)' : '#334D6E'};
-  opacity: ${({menu})=> menu ? '0' : '1'};
-  width: ${({menu})=> menu ? '0' : 'fit-content'};
+  opacity: ${({ menu }) => (menu ? '0' : '1')};
+  width: ${({ menu }) => (menu ? '0' : 'fit-content')};
   transition: all 0.3s ease-in-out;
 
   @media (max-width: 765px) {
@@ -123,7 +117,7 @@ Rest.Searchbar = styled.div`
   align-items: center;
   width: 100%;
   height: 90px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 1px 2px 2px rgba(170, 170, 170, 0.1);
 `;
 
@@ -132,14 +126,13 @@ Rest.InputWrap = styled.div`
   position: relative;
   width: 100%;
   height: 24px;
-  margin-left:50px ;
- 
-`
+  margin-left: 50px;
+`;
 
 Rest.SearchIcon = styled(Search)`
-position: absolute;
-left: 0;
-`
+  position: absolute;
+  left: 0;
+`;
 Rest.Input = styled.input`
   width: 200px;
   height: 100%;
@@ -148,11 +141,10 @@ Rest.Input = styled.input`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #0B132B;
+  color: #0b132b;
   opacity: 0.3;
   padding-left: 40px;
-`
-
+`;
 
 Rest.NavRight = styled.div`
   display: flex;
@@ -161,39 +153,39 @@ Rest.NavRight = styled.div`
 `;
 
 Rest.Notify = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-min-width: 55px;
-height: 55px;
-border: 1px solid #e7e7ea;
-border-radius: 50%;
-position: relative;
-
-.notifies__number{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  background: #FF1717;
-  border-radius: 11px;
-  position: absolute;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  color: #FFFFFF;
-  top: -2px;
-  right: -2px;
-}
-`
+  min-width: 55px;
+  height: 55px;
+  border: 1px solid #e7e7ea;
+  border-radius: 50%;
+  position: relative;
+
+  .notifies__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #ff1717;
+    border-radius: 11px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+    top: -2px;
+    right: -2px;
+  }
+`;
 
 Rest.Notification = styled(Notification)`
   width: 24px;
   height: 24px;
-`
+`;
 Rest.User = styled.img`
   width: 55px;
   height: 55px;
-  margin: 0 40px 0 16px ;
-`
+  margin: 0 40px 0 16px;
+`;
