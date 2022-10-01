@@ -31,6 +31,13 @@ Wrap.Cta__Plus = styled(Plus)`
   margin-right: 6px;
 `;
 
+Wrap.Actions = styled.div`
+  display: flex;
+  width: 100%;
+  height: 66px;
+  background: white;
+`;
+
 export const Grid = styled.div`
   margin: 15px 0;
 `;
@@ -40,7 +47,7 @@ Grid.Data = styled.div`
   line-height: 18px;
   color: #0b132b;
   min-width: fit-content;
-  opacity: ${({ opacity }) => (opacity ? '0.5' : '1')};
+  opacity: ${({ opacity }) => (opacity == 'true' ? '1' : '0.5')};
   label,
   input {
     cursor: pointer;
