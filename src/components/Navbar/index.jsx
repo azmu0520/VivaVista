@@ -7,6 +7,7 @@ import user from '../../assets/images/user.png';
 const Navbar = () => {
   const location = useLocation();
   const [menu, setMenu] = useState(false);
+
   return (
     <Wrap>
       <Nav menu={menu}>

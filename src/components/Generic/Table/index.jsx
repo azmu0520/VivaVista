@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Wrap, Grid } from './style';
+import { Grid, Icon } from './style';
 
 const Table = ({ data, header }) => {
   const initialState = data.reduce(
     (o, key) => ({ ...o, [`check${key.id}`]: false }),
     {}
   );
+  console.log(initialState);
+  const [actions, setActions] = useState(false);
   const [checkedAll, setCheckedAll] = useState(false);
   const [checked, setChecked] = useState(initialState);
   const toggleCheck = (inputName) => {
@@ -22,6 +24,7 @@ const Table = ({ data, header }) => {
       for (const inputName in newState) {
         newState[inputName] = value;
       }
+      setActions(false);
       return newState;
     });
   };
@@ -41,7 +44,15 @@ const Table = ({ data, header }) => {
 
   return (
     <Grid>
-      <Grid.Row style={{ background: '#ededed' }}>
+      <Grid.Header className='header__action'>
+        <Grid.Row_Btn>
+          <Icon.Delete /> O'chirish
+        </Grid.Row_Btn>
+        <Grid.Row_Btn>
+          <Icon.Edit /> Tahrirlash
+        </Grid.Row_Btn>
+      </Grid.Header>
+      <Grid.Row className='table__header' style={{ background: '#ededed' }}>
         <input
           type='checkbox'
           onChange={(event) => selectAll(event.target.checked)}
