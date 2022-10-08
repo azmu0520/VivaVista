@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
+import { Modal } from 'antd';
 
 export const Wrap = styled.div`
   display: flex;
@@ -23,4 +24,11 @@ Wrap.Title = styled.h1`
 
 Wrap.Cta__Plus = styled(Plus)`
   margin-right: 6px;
+`;
+
+export const AntModal = styled(Modal)`
+  margin: auto;
+  .ant-modal-close {
+    display: none;
+  }
 `;

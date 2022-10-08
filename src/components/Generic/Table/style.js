@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 import { ReactComponent as Delete } from '../../../assets/icons/delete.svg';
 import { ReactComponent as Edit } from '../../../assets/icons/edit.svg';
+import { Modal } from 'antd';
+
 export const Grid = styled.div`
   margin: 15px 0;
   position: relative;
-  padding-top: 50px;
+  padding-top: ${({ open }) => (open ? '50px' : '0px')};
+  transition: all 0.3s ease-in-out;
 `;
 Grid.Data = styled.div`
   font-weight: 500;
@@ -30,11 +33,6 @@ Grid.Row = styled.div`
 
     opacity: 1;
   }
-
-  .header__action {
-    position: absolute !important;
-  }
-
   padding-left: 30px;
 `;
 
@@ -59,6 +57,10 @@ Grid.Header = styled.div`
   position: absolute;
   top: 0;
   left: 30px;
+  .action__edit {
+    opacity: ${({ edit }) => (edit == true ? '1' : '0')} !important;
+    transition: all 0.3s ease-in-out;
+  }
 `;
 
 export const Icon = styled.div``;
@@ -68,4 +70,41 @@ Icon.Delete = styled(Delete)`
 `;
 Icon.Edit = styled(Edit)`
   margin-right: 6px;
+`;
+
+export const AntModal = styled(Modal)`
+  margin: auto;
+  .ant-modal-close {
+    display: none;
+  }
+  .ant-modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    width: 400px;
+    height: 158px;
+  }
+`;
+
+AntModal.Delete = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: auto;
+`;
+
+AntModal.Title = styled.div`
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0b132b;
+`;
+
+AntModal.Btn_Wrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
 `;
