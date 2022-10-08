@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Icon } from './style';
+import Button from '../Button';
+import { Grid, Icon, AntModal } from './style';
 
 const Table = ({ data, header }) => {
   const initialState = data.reduce(
     (o, key) => ({ ...o, [`check${key.id}`]: false }),
     {}
   );
-  console.log(initialState);
-  const [actions, setActions] = useState(false);
+  const [deleteItem, setDeleteItem] = useState(false);
+  const [edit, setEdit] = useState(true);
   const [checkedAll, setCheckedAll] = useState(false);
+  const [modal, setModal] = useState('');
   const [checked, setChecked] = useState(initialState);
   const toggleCheck = (inputName) => {
     setChecked((prevState) => {
@@ -24,7 +26,6 @@ const Table = ({ data, header }) => {
       for (const inputName in newState) {
         newState[inputName] = value;
       }
-      setActions(false);
       return newState;
     });
   };
@@ -40,15 +41,54 @@ const Table = ({ data, header }) => {
     } else {
       setCheckedAll(false);
     }
+    let valueList = Object.values(checked);
+    valueList = valueList.filter((item) => item == true);
+    if (valueList.length == 1) {
+      setDeleteItem(true);
+      setEdit(true);
+    } else if (valueList.length >= 2) {
+      setDeleteItem(true);
+      setEdit(false);
+    } else if (valueList.length == 0) {
+      setDeleteItem(false);
+      setEdit(false);
+    }
   }, [checked]);
 
+  const handleDelete = (type) => {
+    setModal(type);
+    console.log(type);
+  };
+  const handleCancel = () => {
+    setModal('');
+  };
   return (
-    <Grid>
-      <Grid.Header className='header__action'>
-        <Grid.Row_Btn>
+    <Grid open={deleteItem}>
+      <AntModal
+        centered
+        open={modal == 'delete'}
+        footer={false}
+        onCancel={handleCancel}
+      >
+        <AntModal.Delete>
+          <AntModal.Title>
+            Haqiqatda ham ochirishini hohlaysizmi?
+          </AntModal.Title>
+          <AntModal.Btn_Wrap>
+            <Button color='#FF1717' bg='#FDE6E6' radius='5px'>
+              O'chirish
+            </Button>
+            <Button bg='#f6f6f6' color='#3a4054' radius='5px'>
+              Bekor qilish
+            </Button>
+          </AntModal.Btn_Wrap>
+        </AntModal.Delete>
+      </AntModal>
+      <Grid.Header edit={edit} className='header__action'>
+        <Grid.Row_Btn onClick={() => handleDelete('delete')}>
           <Icon.Delete /> O'chirish
         </Grid.Row_Btn>
-        <Grid.Row_Btn>
+        <Grid.Row_Btn className='action__edit'>
           <Icon.Edit /> Tahrirlash
         </Grid.Row_Btn>
       </Grid.Header>

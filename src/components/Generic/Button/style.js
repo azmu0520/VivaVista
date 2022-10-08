@@ -12,6 +12,6 @@ export const Wrap = styled.div`
   margin: ${({ auto }) => (auto ? auto : '0px')};
   font-size: 16px;
   line-height: 19px;
-  color: #ffffff;
+  color: ${({ color }) => (color ? color : '#fff')};
   cursor: pointer;
 `;
