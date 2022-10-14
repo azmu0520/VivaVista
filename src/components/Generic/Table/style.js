@@ -36,6 +36,24 @@ Grid.Row = styled.div`
   padding-left: 30px;
 `;
 
+Grid.NoData = styled.div`
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 162px;
+  }
+  h3 {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    /* margin-left: 50px; */
+  }
+`;
+
 Grid.Row_Btn = styled.div`
   width: 123px;
   height: 36px;
