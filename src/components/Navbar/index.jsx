@@ -7,10 +7,9 @@ import user from '../../assets/images/user.png';
 const Navbar = () => {
   const location = useLocation();
   const [menu, setMenu] = useState(false);
-
   return (
     <Wrap>
-      <Nav menu={menu}>
+      <Nav theme={localStorage.getItem('theme')} menu={menu}>
         <Nav.Logo_Wrap onClick={() => setMenu(!menu)}>
           <Nav.Logo />
           <Nav.Logo_Text menu={menu} />

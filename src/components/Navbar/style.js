@@ -17,7 +17,7 @@ export const Nav = styled.div`
   max-width: 280px;
   height: 100%;
   padding: ${({ menu }) => (menu ? '40px 16px' : '40px 32px')};
-  background: #ffffff;
+  background: ${({ theme }) => (theme == 'light' ? '#fff' : '#1F1D2B')};
   box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease-in-out;
 

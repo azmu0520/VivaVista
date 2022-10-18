@@ -10,6 +10,7 @@ import { ReactComponent as sections } from '../assets/icons/sections.svg';
 import { ReactComponent as settings } from '../assets/icons/settings.svg';
 import Students from '../components/Students';
 import Sections from '../components/Sections';
+import Settings from '../components/Settings';
 
 export const data = [
   {
@@ -73,6 +74,6 @@ export const data = [
     title: 'Sozlamar',
     path: '/settings',
     Icon: settings,
-    Component: Generic,
+    Component: Settings,
   },
 ];
