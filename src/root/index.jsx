@@ -6,6 +6,7 @@ import { data } from '../utilits/sidebar';
 import '../index.css';
 
 const Root = () => {
+  console.log(localStorage.getItem('theme'), 'localStorage.getItem');
   return (
     <Routes>
       <Route element={<Navbar />}>
