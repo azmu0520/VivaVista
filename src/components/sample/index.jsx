@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { Wrap } from './style';
- 
-const Students = ()=> {
-  return (
-    <Wrap>index</Wrap>
-  )
-}
+
+const Students = () => {
+  return <Wrap>index</Wrap>;
+};
 
 export default Students;

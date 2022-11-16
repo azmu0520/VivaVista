@@ -11,6 +11,7 @@ import { ReactComponent as settings } from '../assets/icons/settings.svg';
 import Students from '../components/Students';
 import Sections from '../components/Sections';
 import Settings from '../components/Settings';
+import Pipline from '../components/Pipline';
 
 export const data = [
   {
@@ -29,10 +30,10 @@ export const data = [
   },
   {
     id: 3,
-    title: 'Lidlar',
+    title: 'Pipline',
     path: '/leaders',
     Icon: leaders,
-    Component: Generic,
+    Component: Pipline,
   },
   {
     id: 4,
