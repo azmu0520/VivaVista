@@ -1,7 +1,16 @@
 import React from 'react';
 import { Wrap } from './style';
 
-const Button = ({ children, width, height, bg, auto, color, radius }) => {
+const Button = ({
+  children,
+  width,
+  height,
+  bg,
+  auto,
+  color,
+  radius,
+  onClick,
+}) => {
   return (
     <Wrap
       width={width}
@@ -10,6 +19,7 @@ const Button = ({ children, width, height, bg, auto, color, radius }) => {
       auto={auto}
       color={color}
       radius={radius}
+      onClick={onClick}
     >
       {children}
     </Wrap>

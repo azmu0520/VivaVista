@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
-import { Tabs } from 'antd';
+import { Tabs, Modal } from 'antd';
 
 export const AntTabs = styled(Tabs)`
   .ant-tabs-nav {
