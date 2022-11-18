@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Content from '../Generic/Content';
 import Table from '../Generic/Table';
 import { AntTabs, TabsTabPane, Wrap } from './style';
 
 let students = [
   {
-    id: 1,
+    id: '1students',
     group_id: 'g1',
     course__title: 'Html & Css',
     price: '100$',
@@ -13,7 +13,7 @@ let students = [
     mentor: 'Shaxboz Yaxyayev',
   },
   {
-    id: 2,
+    id: '2students',
     group_id: 'g2',
     course__title: 'JavaScript',
     price: '120$',
@@ -21,7 +21,7 @@ let students = [
     mentor: 'Shaxboz Yaxyayev',
   },
   {
-    id: 3,
+    id: '3students',
     group_id: 'g3',
     course__title: 'Reactjs',
     price: '150$',
@@ -29,7 +29,7 @@ let students = [
     mentor: 'Azizbek Mukhtorov',
   },
   {
-    id: 4,
+    id: '4students',
     group_id: 'g4',
     course__title: 'Nodejs',
     price: '120$',
@@ -40,19 +40,19 @@ let students = [
 
 let members = [
   {
-    id: 1,
+    id: '1members',
     full_name: 'Sardorbek Mukhtorov',
     position: 'SEO',
     phone: '99893 123 4567',
   },
   {
-    id: 2,
+    id: '2members',
     full_name: 'Shaxboz Yaxyayev',
     position: 'Front-End',
     phone: '99893 123 4567',
   },
   {
-    id: 3,
+    id: '3members',
     full_name: 'Azizbek Mukhtorov',
     position: 'Reactjs',
     phone: '99893 123 4567',
@@ -60,18 +60,23 @@ let members = [
 ];
 
 let rooms = [
-  { id: 1, name: 'Room-1', staff: 'Sardor' },
-  { id: 2, name: 'Room-2', staff: 'Shaxboz' },
-  { id: 3, name: 'Room-3', staff: 'Ali' },
+  { id: '1rooms', name: 'Room-1', staff: 'Sardor' },
+  { id: '2rooms', name: 'Room-2', staff: 'Shaxboz' },
+  { id: '3rooms', name: 'Room-3', staff: 'Ali' },
 ];
 const tableHeader = ['ID', 'Kurs nomi', 'Narx', 'Yatatilgan sana', 'Mentor'];
 const memberheader = ['FIO', 'Lavozim', 'Telefon raqam'];
 const roomheader = ['Hona raqami', 'Masul shaxs'];
 const Sections = () => {
+  let samp = [0, 'kurs', 'hodim', 'xona'];
+  const [type, setType] = useState(samp[1]);
+  const handleChange = (data) => {
+    setType(samp[data]);
+  };
   return (
     <Wrap>
-      <Content title="Bo'limlar">
-        <AntTabs>
+      <Content title="Bo'limlar" type={type}>
+        <AntTabs onChange={handleChange}>
           <TabsTabPane key={1} tab={'Kurslar'}>
             <Table data={students} header={tableHeader} />
           </TabsTabPane>
