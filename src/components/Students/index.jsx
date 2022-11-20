@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Button from '../Generic/Button';
+import Content from '../Generic/Content';
+import Table from '../Generic/Table';
 import { Grid, Wrap } from './style';
 
 let students = [
@@ -86,7 +88,10 @@ const Students = () => {
 
   return (
     <Wrap>
-      <Wrap.Header>
+      <Content title={"O'quvchilar"} type='student'>
+        <Table data={students} header={tableHeader} type='student' />
+      </Content>
+      {/* <Wrap.Header>
         <Wrap.Title>O'quvchilar</Wrap.Title>
         <Button auto='0 0 0 auto'>
           <Wrap.Cta__Plus /> Yaratish
@@ -133,7 +138,7 @@ const Students = () => {
             </Grid.Data>
           </Grid.Row>
         ))}
-      </Grid>
+      </Grid> */}
     </Wrap>
   );
 };
