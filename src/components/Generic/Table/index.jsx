@@ -3,7 +3,7 @@ import Button from '../Button';
 import { Grid, Icon, AntModal } from './style';
 import nodata from '../../../assets/images/noData.png';
 
-const Table = ({ data, header }) => {
+const Table = ({ data, header, type }) => {
   const initialState = data.reduce(
     (o, key) => ({ ...o, [`check${key.id}`]: false }),
     {}
@@ -106,9 +106,21 @@ const Table = ({ data, header }) => {
             <Grid.Row_Btn onClick={() => handleDelete('delete')}>
               <Icon.Delete /> O'chirish
             </Grid.Row_Btn>
-            <Grid.Row_Btn className='action__edit'>
-              <Icon.Edit /> Tahrirlash
-            </Grid.Row_Btn>
+            {type == 'student' ? (
+              <div style={{ display: 'flex' }}>
+                <Grid.Row_Btn className='action__edit'>
+                  <Icon.Payment /> Tolov
+                </Grid.Row_Btn>
+
+                <Grid.Row_Btn className='action__edit'>
+                  <Icon.Message /> Xabar jo'natish
+                </Grid.Row_Btn>
+              </div>
+            ) : (
+              <Grid.Row_Btn className='action__edit'>
+                <Icon.Edit /> Tahrirlash
+              </Grid.Row_Btn>
+            )}
           </Grid.Header>
           <Grid.Row className='table__header' style={{ background: '#ededed' }}>
             <input

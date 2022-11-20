@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { ReactComponent as Delete } from '../../../assets/icons/delete.svg';
 import { ReactComponent as Edit } from '../../../assets/icons/edit.svg';
+import { ReactComponent as Payment } from '../../../assets/icons/payment.svg';
+import { ReactComponent as Message } from '../../../assets/icons/message.svg';
 import { Modal } from 'antd';
 
 export const Grid = styled.div`
@@ -55,7 +57,7 @@ Grid.NoData = styled.div`
 `;
 
 Grid.Row_Btn = styled.div`
-  width: 123px;
+  width: fit-content;
   height: 36px;
   display: flex;
   align-items: center;
@@ -68,6 +70,7 @@ Grid.Row_Btn = styled.div`
   color: #979ba5;
   margin-right: 16px;
   cursor: pointer;
+  padding: 0 16px;
 `;
 
 Grid.Header = styled.div`
@@ -87,6 +90,12 @@ Icon.Delete = styled(Delete)`
   margin-right: 6px;
 `;
 Icon.Edit = styled(Edit)`
+  margin-right: 6px;
+`;
+Icon.Payment = styled(Payment)`
+  margin-right: 6px;
+`;
+Icon.Message = styled(Message)`
   margin-right: 6px;
 `;
 

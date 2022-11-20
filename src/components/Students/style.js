@@ -2,17 +2,7 @@ import styled from 'styled-components';
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
 import { ReactComponent as Plus } from '../../assets/icons/plus.svg';
 
-export const Wrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: inherit;
-  height: fit-content;
-  background: #ffffff;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  margin: 40px;
-  /* box-sizing: border-box; */
-`;
+export const Wrap = styled.div``;
 
 Wrap.Header = styled.div`
   display: flex;

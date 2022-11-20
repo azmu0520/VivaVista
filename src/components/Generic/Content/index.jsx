@@ -134,7 +134,36 @@ const Content = ({ title, children, type }) => {
           </AntModal.SubmitWrap>
         </AddModal.Form>
       </AddModal>
-
+      <AddModal
+        open={addModal == 'student'}
+        maskStyle={{
+          backgroundColor: 'rgba(0, 0, 0, 0.05)',
+          backdropFilter: 'blur(2px)',
+        }}
+        footer={false}
+        closable={false}
+      >
+        <AddModal.Form>
+          <AddModal.Title>Yangi xona qo'shish</AddModal.Title>
+          <AddModal.Label>Xona nomi </AddModal.Label>
+          <AddModal.Input placeholder='Enter your full-name' />
+          <AntModal.SubmitWrap type={type}>
+            <Button height='36px' radius={'6px'} width='45%' onClick={handleOk}>
+              Saqlash
+            </Button>
+            <Button
+              height='36px'
+              color='#0B132B'
+              bg='#EDEDED'
+              radius={'6px'}
+              width='45%'
+              onClick={handleCancel}
+            >
+              Bekor qilish
+            </Button>
+          </AntModal.SubmitWrap>
+        </AddModal.Form>
+      </AddModal>
       <Wrap.Header>
         <Wrap.Title>{title || 'No Title'}</Wrap.Title>
         <Button auto='0 0 0 auto' onClick={() => setAddModal(type)}>
