@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nutio;
+}
+
+@font-face {
+  font-family: "Nutio";
+  src: url("./assets//fonts/Nunito-Regular.ttf");
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}

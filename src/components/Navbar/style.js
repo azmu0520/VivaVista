@@ -1,191 +1,58 @@
-import styled from 'styled-components';
-import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
-import { ReactComponent as Search } from '../../assets/icons/search.svg';
-import { ReactComponent as Notification } from '../../assets/icons/notification.svg';
-
-export const Wrap = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
-
-export const Nav = styled.div`
-  display: flex;
-  /* align-items: ${({ menu }) => (menu ? 'center' : 'flex-star')}; */
-  flex-direction: column;
-  flex: ${({ menu }) => (menu ? '0' : '1')};
-  max-width: 280px;
-  height: 100%;
-  padding: ${({ menu }) => (menu ? '20px 16px' : '20px 32px')};
-  background: ${({ theme }) => (theme == 'light' ? '#fff' : '#1F1D2B')};
-  box-shadow: 6px 0px 18px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease-in-out;
-
-  @media (max-width: 765px) {
-    padding: 25px 16px;
-  }
-  @media (max-width: 345px) {
-  }
-`;
-
-Nav.Logo_Wrap = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: fit-content;
-  margin-bottom: 45px;
-  cursor: pointer;
-  @media (max-width: 765px) {
-    justify-content: center;
-  }
-`;
-
-Nav.Logo_Text = styled.span`
-  margin: 0 15px;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--color-primary);
-  opacity: ${({ menu }) => (menu ? '0' : '1')};
-  position: ${({ menu }) => (menu ? 'absolute' : 'static')};
-  right: ${({ menu }) => (menu ? '0' : '1')};
-  ::before {
-    content: 'WebBrain Academy';
-  }
-  @media (max-width: 765px) {
-    display: none;
-  }
-  transition: all 0.3s ease-in-out;
-`;
-
-Nav.Logo = styled(Logo)`
-  min-width: 40px;
-  max-width: 60px;
-  /* width: 133px;
-  height: fit-content;
-  margin-bottom: 45px;
-  cursor: pointer; */
-`;
-
-Nav.Links = styled.ul`
-  display: flex;
-  /* align-items: ${({ menu }) => (menu ? 'center' : 'flex-start')}; */
-
-  flex-direction: column;
-  border-bottom: 1px solid #ebeff2;
-`;
-
-Nav.Link = styled.li`
-  display: flex;
-  align-items: center;
-  .h3 {
-    margin-left: 16px;
-  }
-  .nav__icon {
-    path {
-      fill: ${({ active }) =>
-        active == 'true' ? 'var(--color-primary)' : '#334D6E'};
-      transition: all 0.3s ease-in-out;
-    }
-  }
-  @media (max-width: 765px) {
-    justify-content: center;
-  }
-  margin-bottom: 38px;
-`;
-
-Nav.Link_Text = styled.h3`
-  margin-left: 16px;
-  color: ${({ active }) =>
-    active == 'true' ? 'var(--color-primary)' : '#334D6E'};
-  opacity: ${({ menu }) => (menu ? '0' : '1')};
-  width: ${({ menu }) => (menu ? '0' : 'fit-content')};
-  transition: all 0.3s ease-in-out;
-
-  @media (max-width: 765px) {
-    display: none;
-  }
-`;
-
-export const Rest = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 4.2;
-`;
-
-Rest.Searchbar = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 90px;
-  background: #ffffff;
-  box-shadow: 1px 2px 2px rgba(170, 170, 170, 0.1);
-`;
-
-Rest.InputWrap = styled.div`
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 24px;
-  margin-left: 50px;
-`;
-
-Rest.SearchIcon = styled(Search)`
-  position: absolute;
-  left: 0;
-`;
-Rest.Input = styled.input`
-  width: 200px;
-  height: 100%;
-  outline: none;
-  border: none;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #0b132b;
-  opacity: 0.3;
-  padding-left: 40px;
-`;
-
-Rest.NavRight = styled.div`
-  display: flex;
-  margin-left: auto;
-  align-items: center;
-`;
-
-Rest.Notify = styled.div`
+import styled, { css } from "styled-components";
+// import { ReactComponent as Search } from "../../assets/icons/search.svg";
+const center = css`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 55px;
-  height: 55px;
-  border: 1px solid #e7e7ea;
-  border-radius: 50%;
-  position: relative;
+`;
+export const Wrap = styled.div`
+  position: absolute;
+  z-index: 10;
+  padding: 30px 0 0;
+  width: 100%;
+  .container {
+    ${center}
 
-  .notifies__number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    background: #ff1717;
-    border-radius: 11px;
-    position: absolute;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: #ffffff;
-    top: -2px;
-    right: -2px;
+    justify-content: space-evenly;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .image-container {
+    max-width: 100%;
+    height: auto;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .controllers {
+    img {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      padding: 7px;
+      background: #fff;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
   }
 `;
 
-Rest.Notification = styled(Notification)`
-  width: 24px;
-  height: 24px;
-`;
-Rest.User = styled.img`
-  width: 55px;
-  height: 55px;
-  margin: 0 40px 0 16px;
+export const Links = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+  a {
+    padding: 10px 22px;
+    color: inherit;
+    :hover {
+      color: #fc9823;
+      font-size: 23px;
+    }
+  }
 `;

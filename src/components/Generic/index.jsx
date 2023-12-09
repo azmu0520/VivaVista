@@ -1,7 +1,5 @@
-import React from 'react';
+import { Wrap } from "./style";
 
-const Generic = () => {
-  return <div>Generic</div>;
-};
-
-export default Generic;
+export default function Generic() {
+  return <Wrap>Generic</Wrap>;
+}
