@@ -23,7 +23,6 @@ export default function Carousel({ children }) {
         className="mySwiper"
       >
         {children}
-        {/* <SwiperSlide>Slide 1</SwiperSlide> */}
       </Swiper>
     </Wrap>
   );
